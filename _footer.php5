@@ -1,0 +1,75 @@
+<?php
+  // Testé avec PHP 4.3.3
+  Function xtTraiter($nompage) {
+    $nompage = strtolower($nompage);
+	$nompage = strtr($nompage,"àâäáîïíôöóùûüéèêëçñ","aaaaiiiooouuueeeecn");
+	$nompage = eregi_replace("[^a-z0-9_:~\\\/\-]","_",$nompage);
+	return($nompage);
+  }
+?>
+<!-- Pied de page -->
+      <div id="footer">
+	    <p>
+		  Cliquez <a href="#global">ici</a> pour remonter | 
+		  <a href="http://validator.w3.org/check/referer" title="Valid xhtml 1.0 Strict"><img src="images/badges/valid_xhtml10_80x15_2.png" alt="Valid xhtml 1.0 Strict" title="Valid xhtml 1.0 Strict" width="80" height="15"/></a> | 
+		  <a href="http://jigsaw.w3.org/css-validator/check/referer" title="Valide css"><img src="images/badges/valid_css_80x15_2.png" alt="Valide css" title="Valide css" width="80" height="15"/></a> | 
+		  <a href="http://www.mozilla-europe.org/fr/" title="Get Firefox - The Browser, Reloaded."><img src="images/badges/get_firefox_80x15.png" alt="Get Firefox" title="Get Firefox - The Browser, Reloaded." width="80" height="15"/></a> | 
+		  <img src="images/badges/made_france_80x15.png" alt="Made in France" title="Made in France" width="80" height="15"/> | 
+		  <a href="http://www.php.net" title="Powered by PHP"><img src="images/badges/get_php_80x15.png" alt="Powered by PHP" title="Powered by PHP" width="80" height="15"/></a> | 
+		  <a href="http://www.mysql.com" title="Powered by MySQL"><img src="images/badges/get_mysql_80x15.png" alt="Powered by MySQL" title="Powered by MySQL" width="80" height="15"/></a>
+		</p>
+		<p>
+<!-- Start Free-PageRank.com -->
+		  <script type="text/javascript">_FPR=0;</script>
+		  <script type="text/javascript" src="http://www.free-pagerank.com/js/free-pagerank.js"></script>
+		  <script type="text/javascript">if(_FPR==1){freepr("http://ttbeaupreau.free.fr","2");}</script>
+		  <object>
+		    <noscript>
+		      <p>
+			    <a href="http://www.free-pagerank.com">Free PageRank logo for your site</a>
+			  </p>
+		    </noscript>
+		  </object>
+<!-- End Free-PageRank.com --> | 
+<!-- Start Xiti -->
+			<a href="http://www.xiti.com/xiti.asp?s=311888" title="WebAnalytics">
+				<script type="text/javascript">
+				<!--
+				Xt_param = 's=311888&p=<?php echo xtTraiter($menu_left[($page*2)]) ?>';
+				try {Xt_r = top.document.referrer;}
+				catch(e) {Xt_r = document.referrer;}
+				Xt_h = new Date();
+				Xt_i = '<img width="80" height="15" border="0" alt="" ';
+				Xt_i += 'src="http://logv16.xiti.com/g.xiti?'+Xt_param;
+				Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+				if(parseFloat(navigator.appVersion)>=4) {
+					Xt_s=screen;
+					Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;
+				}
+				document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" title="Internet Audience">');
+				//-->
+				</script>
+				<object>
+					<noscript>
+						<p>Mesure d'audience ROI statistique webanalytics par <img width="80" height="15" src="http://logv16.xiti.com/g.xiti?s=311888&amp;p=<?php echo xtTraiter($menu_left[($page*2)]) ?>" alt="WebAnalytics" /></p>
+					</noscript>
+				</object>
+			</a>
+<!-- End Free-PageRank.com -->
+		</p>
+		<p><img src="images/exectime.png" alt=""/> 
+		<?php
+		  $end_time = getmicrotime();
+		  echo 'Page générée en '.round($end_time-$start_time, 3).' s';
+		?> | 
+		<img src="images/connectes.png" alt=""/> xx visiteurs connectés | 
+		<img src="images/communaute.png" alt=""/> xx visiteurs depuis l'ouverture du site | 
+		<img src="images/adresse_ip.png" alt=""/>
+		<?php
+		  $ip = get_ip();
+		  echo $ip." | ";
+		  $host = gethostbyaddr($ip);
+		  echo $host;
+		?></p>
+		<p>Tous droits réservés. Copyright &copy; Tennis de Table Beaupréau 2007-2008 | Code &amp; design par <a href="mailto:bertrand.delion@free.fr">fifiz</a> | Contenu par <a href="mailto:notubalex@hotmail.fr">notub.alex</a></p>
+      </div>

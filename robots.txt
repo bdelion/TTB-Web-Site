@@ -1,0 +1,7 @@
+User-agent: *
+
+Disallow: /photos/
+Disallow: /lightbox/
+Disallow: /includes/
+Disallow: /images/
+Disallow: /styles/
