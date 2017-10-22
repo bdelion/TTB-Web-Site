@@ -21,6 +21,13 @@
               <li><a href="http://www.ittf.com">Fédération Internationale</a></li>
               <li><a href="http://www.olympic.org/fr/sports/programme/index_fr.asp?SportCode=TT">Comité International Olympique</a></li>
             </ul>
+          </div>
+<!-- Menu publicités -->
+          <div class="menu">
+            <h3>Publicité</h3>
+			<ul>
+              <li><a href="http://www.wsport.com/accueil_ind.php">Wack Sport</a></li>
+            </ul>
           </div>		  
         </div>        
       </div>

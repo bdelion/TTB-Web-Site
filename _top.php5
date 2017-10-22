@@ -1,8 +1,4 @@
 <?php
-  function getmicrotime(){
-    list($usec, $sec) = explode(' ', microtime());
-	return((float)$usec + (float)$sec);
-  }
   $start_time = getmicrotime();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -15,12 +11,14 @@
     </title>	
 	
 <!-- Déclaration des ressources externes : CSS -->
-	<link rel="stylesheet" title="Principale" type="text/css" href="styles/main.css" />
-	<link rel="alternate stylesheet" title="Alternative" type="text/css" href="styles/alternative.css" />
-	<link rel="alternate stylesheet" title="Bleu" type="text/css" href="styles/main_bleu.css" />
-	<link rel="alternate stylesheet" title="Gris" type="text/css" href="styles/main_gris.css" />
-	<link rel="alternate stylesheet" title="Foncé" type="text/css" href="styles/main_fonce.css" />
-	<link rel="alternate stylesheet" title="Rayé" type="text/css" href="styles/main_raye.css" />
+	<link rel="stylesheet" title="main_2.css" type="text/css" href="styles/main_2.css" />
+	<link rel="alternate stylesheet" title="main.css" type="text/css" href="styles/main.css" />
+	<link rel="alternate stylesheet" title="alternative.css" type="text/css" href="styles/alternative.css" />
+	<link rel="alternate stylesheet" title="main_bleu.css" type="text/css" href="styles/main_bleu.css" />
+	<link rel="alternate stylesheet" title="main_gris.css" type="text/css" href="styles/main_gris.css" />
+	<link rel="alternate stylesheet" title="main_fonce.css" type="text/css" href="styles/main_fonce.css" />
+	<link rel="alternate stylesheet" title="main_raye.css" type="text/css" href="styles/main_raye.css" />
+	<link rel="alternate stylesheet" title="default.css" type="text/css" href="styles/default.css" />
 <!-- Déclaration du jeu de caractères utilisé -->
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
 <!-- Description et mots clés -->
@@ -45,7 +43,49 @@
 	<script type="text/javascript" src="lightbox/js/scriptaculous.js?load=effects"></script>
 	<script type="text/javascript" src="lightbox/js/lightbox.js"></script>
 	<link rel="stylesheet" href="lightbox/css/lightbox.css" type="text/css" media="screen" />
+<!-- Script ViaMichelin -->
+    <script src="http://api.viamichelin.com/apijs/js/api.1.0.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	  VMAPI.registerKey("JSGP20070605085845776097242640");
+	  function affiche() {
+	    map = new VMMap(document.getElementById("yourmapdiv"));
+		map.drawMap(new VMLonLat(2,48),8);
+	  }
+	</script>
+<!-- Script Google Maps -->
+	<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAwY5xkSTYkh7LUOpD8xbD4xT2yXp_ZAY8_ufC3CFXhHIE1NvwkxQi63ZrruGbKKjUtBlMt9qbW0uHNA" type="text/javascript"></script>
+    <script type="text/javascript">
+	//<![CDATA[
+	  function load()
+	  {
+	    if (GBrowserIsCompatible())
+		{
+		<!-- Crèe une carte aux coordonnées indiquées avec comme troisième paramètre le niveau de zoom -->	
+		  var map = new GMap2(document.getElementById("map"));
+		  map.setCenter(new GLatLng(47.20305, -0.99833), 16);
+		  <!-- Ajoute les barres d'outil de contrôle du Zoom et du Type d'affichage Plan ou Satellite -->
+		  map.addControl(new GSmallMapControl());
+		  map.addControl(new GMapTypeControl());
+		  <!-- Ajoute des marqueurs avec texte s'ouvrant lors des clics. La fonction createMarker est à déclarer une fois -->
+		  function createMarker(point, texte)
+		  {
+		    var marker = new GMarker(point);
+			map.addOverlay(marker);
+			GEvent.addListener(marker, "click", function() { marker.openInfoWindowHtml(texte); });
+		  }
+		  <!-- Ajoute des marqueurs sur la carte aux coordonnés passées en paramètre -->
+		  var point = new GLatLng(47.20305, -0.99833);
+		  var html = '<b>' + 'TTB :: Tennis de Table Beaupréau' + '</b> <br/>' + 'Salle : 3 place du Mai';
+		  createMarker(point, html);
+		  <!-- Ajoute des marqueurs sur la carte aux coordonnés passées en paramètre -->
+		  var point = new GLatLng(47.20293, -0.99921);
+		  var html = '<b>' + 'TTB :: Tennis de Table Beaupréau' + '</b> <br/>' + 'Salle : 3 place du Mai';
+		  createMarker(point, html);
+		}
+	  }
+	//]]>
+	</script>
   </head>
    
-  <body>
+  <body onload="load()" onunload="GUnload()">
     <div id="global">

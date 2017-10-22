@@ -5,5 +5,5 @@
 		    echo $menu_left[($page*2)];
 		  ?>
 		</p>
-		<p id="find"></p>
+		<p id="find">Rechercher ...</p>
       </div>
