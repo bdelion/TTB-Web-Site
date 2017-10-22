@@ -1,0 +1,350 @@
+/****************************************************/
+/* Feuille de style du site web du Tennis de Table Beaupreau */
+/****************************************************/
+
+/****************************************************/
+/* #id                                                                                             */
+/* .classe                                                                                        */
+/****************************************************/
+
+/* Disposition
+****************************************************/
+
+*{
+  margin: 0;
+  padding:0;}
+
+body{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 700px;
+  
+  background: #7e7e7e;
+  color: #eee;
+  font: 76% 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  /* word-wrap: break-word; */	/* IE */}
+ 
+/* <!--[if lt IE 7]>
+body{
+  width:700px;
+  width:expression(document.body.clientWidth < 700? "700px": "auto" );
+}
+<![endif]--> */
+
+div#global{
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;}
+
+p#navigation{
+  float: left;}
+
+p#find{
+  text-align: right;}
+
+div#center{
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;}
+
+div#menu_left{
+  float: left;
+  width: 18%;}
+
+div.menu{
+  width: 98%;
+  margin: 3px 0 3px 0;
+  margin-left: auto;
+  margin-right: auto;}
+
+div#content{
+  float: left;
+  width: 56%;
+  
+  margin-left: 0.9%;
+  margin-right: 0.9%;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+div#menu_right{
+  float: left;
+  width: 22%;}
+
+div#footer{
+  clear: both;
+  position: relative;}
+
+div#menu_left, div#content, div#menu_right{
+  margin-top: 10px;
+  padding-bottom: 32767px;
+  margin-bottom: -32767px;}
+
+/* Typographie
+****************************************************/
+
+p{
+  line-height: 1.5em;
+  margin-bottom: 1.0em;
+  font-size: 0.9em;}
+
+p.lead{
+  font-size: 1.0em;}
+
+ol, ul{
+  margin: 0.5em 0 1.2em 2em;}
+
+ol, ul, dl{
+  line-height: 1.5em;}
+
+ol li{
+  margin-bottom: 0.2em;}
+
+li{
+  font-size: 0.9em;}
+
+li strong{
+  color: #000000;}
+
+dl{
+  margin: 0.5em 0 1.2em 0;}
+
+dt{
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #999;
+  padding-top: 0.4em;}
+
+dd{
+  font-size: 0.9em;
+  margin-bottom: 1.0em;
+  padding-bottom: 0.9em;
+  border-bottom: 1px dashed #3d3d33;}
+
+h1, h2, h3{
+  font-family: "Trebuchet MS",Verdana,Sans-Serif;}
+
+h1{
+  font-size: 2.5em;}
+
+h1 a{
+  color:#fff;
+  border: none;}
+
+h1 em{
+  color: #f3f3a5;
+  font-style: normal;}
+
+h2 {
+  font-size: 1.5em;
+  letter-spacing: 0.4pt;
+  color: #FFE223;
+  text-transform: uppercase;
+  padding-top: 0.5em;}
+
+h3 {
+  font-size: 1.0em;
+  letter-spacing: 0.2pt;
+  color: #f0f0a3;
+  text-transform: uppercase;
+  padding-top: 0.5em;}
+
+a{
+  font-weight: bold;
+  color: #638edd;
+  text-decoration: none;}
+
+p a:hover{
+  border-bottom: 1px dotted #638edd;}
+
+a img{
+  border: none;}
+
+small{
+  font-size: 0.8em;}
+
+pre{
+ display: block;
+ margin: 1.0em 0;
+ padding-left: 0.8em;
+ border-left: 1px solid #222;
+ background-color: #000;
+ overflow: auto;}
+
+code{
+  font-size: 11px;
+  font-family: Verdana,Sans-Serif;
+  background-color: #000;
+  color: #aaa;}
+
+pre code{
+  line-height: 1.1em;}
+
+kbd{
+  color: #555;
+  background-color: #ddd;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0 3px 2px 4px;}
+
+fieldset{
+  border: none;}
+
+/* Barre de menu
+****************************************************/
+div.menu h3{
+  margin: 0;
+  padding: 0;
+  color: #638edd;
+  background-color: #EFEFF1;
+  background-image: url(bk1.png);
+  background-repeat: repeat;
+  text-align: right;
+  border: 1px solid #bee3ba;
+}
+  
+div.menu a{
+  color: #fff;}
+
+div.menu p a:hover{
+  border-bottom: 1px dotted #fff;}
+
+div.menu h1 a{
+  font-weight: bold;}
+
+div.menu h1 a:hover{
+  color: inherit;}
+
+div.menu ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;}
+
+div.menu ul li{
+  padding: 0;
+  margin: 0;
+  border: 1px solid #bee3ba;
+  margin: 3px 0 0 0;
+}
+
+div.menu ul a{
+  display: block;
+  padding: 0.1em 0.2em 0.1em 0.2em;
+  font-weight: normal;
+  color: #eee;
+  background-color: #adadad;}
+
+div.menu ul a:hover{
+  color: #1a1a1a;
+  background-color: #FFFFE1;}
+
+div.menu li.sel{
+  padding: 0.1em 0.2em 0.1em 0.2em;
+  color: black;
+  background-color: white;
+  border-right-width: 8px;
+  border-right-color: #bee3ba;}
+
+/* Corps
+****************************************************/
+div#global{
+  /* border: 2px solid #ffe223; */
+  margin-top: 10px;
+  margin-bottom: 10px;}
+
+/* Barre de titre
+****************************************************/
+div#header_nav{
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #FFE223;
+  color: #7e7e7e;
+  background-color: #FFFFE1;}
+
+div#header_nav p, div#header_log p{
+  line-height: 2em;
+  margin-bottom: 0em;}
+
+div#header{
+  background-image: url(header_h1_background.png);
+  background-repeat: repeat-x;
+  height: 100px;
+  margin-top: 10px;
+  border: 1px solid #FFE223;
+}
+
+div#logo{
+  position: relative;
+  width: 137px;
+  height: 92px;
+  top: 4px;
+  left: 30px;
+  float: left;
+  background: url(logo.png) no-repeat;
+}
+/* 
+*html div#logo {    
+  background-image:none;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='styles/logo.png',sizingMethod='scale');
+} */
+
+div#header h1{
+  padding-top: 0.5em;
+  padding-right: 1em;
+  color: #FFE223;
+  text-align: right;
+  vertical-align: baseline;
+  float: right;
+  width: 400px;
+}
+
+div#header_log{
+  padding-left: 30px;
+  padding-right: 30px;
+  border: 1px solid #FFE223;
+  color: #7e7e7e;
+  background-color: #FFFFE1;
+  margin-top: 10px;}
+
+/* Contenu
+****************************************************/
+div#content{
+  text-align: justify;  
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 2px;
+  border-right-width: 2px;
+  border-style: solid;
+  border-color: #9fc2ff;
+}
+
+/* Pied de page
+****************************************************/
+div#footer{
+  clear: both;
+  margin-top: 10px;
+  padding: 2px;
+  padding-left: 30px;
+  padding-right: 30px;
+  line-height: 1.5em;
+  border: 1px solid #FFE223;
+  color: #7e7e7e;
+  background-color: #FFFFE1;}
+
+div#footer p{
+  text-align: center;}
+
+div#footer a:hover{
+  border-bottom: 1px dotted #638edd;} 
+
+div#footer a img, div#footer img, div#footer a img:hover{
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-bottom: 0px;
+  vertical-align: middle;}
