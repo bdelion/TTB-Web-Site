@@ -17,7 +17,7 @@
   else {
     $page = 0;
   }
-  $menu_left = array ('Accueil', 'accueil', 'Equipes', 'equipes', 'Bureau / Contacts', 'contacts', 'Presse', 'presse', 'Téléchargement', 'telechargement', 'Saison 2006-2007', 'photos_20062007', 'Saison 2005-2006', 'photos_20052006', 'Dates & Heures', 'dates_heures', 'Mot de passe', 'mot_de_passe', 'SQL Tests', 'sql_tests', 'Cartographie', 'cartographie', 'Mini Chat', 'mini_chat', 'Image Tools', 'image_tools', 'Fonctions chaînes', 'fonctions_chaines', 'Formulaire', 'formulaire', 'Livre d\'or', 'livre_or', 'News', 'news', 'Les variables superglobales', 'var_superglobale', 'Lecture / écriture dans un fichier', 'fichier', 'Les tableaux', 'array', 'Images', 'images', 'Expressions régulières', 'regex');
+  $menu_left = array ('Accueil', 'accueil', 'Equipes', 'equipes', 'Bureau / Contacts', 'contacts', 'Presse', 'presse', 'Tï¿½lï¿½chargement', 'telechargement', 'Saison 2006-2007', 'photos_20062007', 'Saison 2005-2006', 'photos_20052006', 'Dates & Heures', 'dates_heures', 'Mot de passe', 'mot_de_passe', 'SQL Tests', 'sql_tests', 'Cartographie', 'cartographie', 'Mini Chat', 'mini_chat', 'Image Tools', 'image_tools', 'Fonctions chaï¿½nes', 'fonctions_chaines', 'Formulaire', 'formulaire', 'Livre d\'or', 'livre_or', 'News', 'news', 'Les variables superglobales', 'var_superglobale', 'Lecture / ï¿½criture dans un fichier', 'fichier', 'Les tableaux', 'array', 'Images', 'images', 'Expressions rï¿½guliï¿½res', 'regex');
   if (($page < 0) OR ($page > 21)) {
     $page = 0;
   }
@@ -27,7 +27,7 @@
   include('includes/mes_fonctions.php5');
   include('includes/ImageTools.class.php5');
   
-  $connection = mysql_connect('localhost', 'root', '396549');
+  $connection = mysql_connect('localhost', 'root', '');
   if ($connection)
   {
     $db_selected = mysql_select_db('test', $connection);
@@ -42,12 +42,12 @@
 	  $donnees = mysql_fetch_array($reponse);
 	  if($donnees['nbre_entrees'] == 0)  //L'ip n'est pas dans la table, on l'ajoute
 	    $query = "INSERT INTO connectes VALUES('".$adresse_ip."','".time()."')";
-	  else // L'ip est déjà dans la table, on met à jour son timestamp
+	  else // L'ip est dï¿½jï¿½ dans la table, on met ï¿½ jour son timestamp
 	    $query = "UPDATE connectes SET timestamp='".time()."' WHERE ip='".$adresse_ip."'";
 	  $reponse = mysql_query($query);
 	  if (!$reponse)
 	    echo 'Invalid query : ' . mysql_error().' - '.$reponse.'<br/>';
-/* On supprime les adresses IP de la table qui ont un timestamp qui remonte à plus de 5 minutes */
+/* On supprime les adresses IP de la table qui ont un timestamp qui remonte ï¿½ plus de 5 minutes */
 	  $timestamp_5min = time()-(60*5);
 	  $query = "DELETE FROM connectes WHERE timestamp<'".$timestamp_5min."'";
 	  $reponse = mysql_query($query);

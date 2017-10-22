@@ -1,8 +1,8 @@
 <?php
-  // Testé avec PHP 4.3.3 POUR PAGERANK
+  // Testï¿½ avec PHP 4.3.3 POUR PAGERANK
   Function xtTraiter($nompage) {
     $nompage = strtolower($nompage);
-	$nompage = strtr($nompage,"àâäáîïíôöóùûüéèêëçñ","aaaaiiiooouuueeeecn");
+	$nompage = strtr($nompage,"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½","aaaaiiiooouuueeeecn");
 	$nompage = eregi_replace("[^a-z0-9_:~\\\/\-]","_",$nompage);
 	return($nompage);
   }
@@ -61,11 +61,11 @@
 		<p><img src="images/exectime.png" alt=""/> 
 		<?php
 		  $end_time = getmicrotime();
-		  echo 'Page générée en '.round($end_time-$start_time, 3).' s';
+		  echo 'Page gÃ©nÃ©rÃ©e en '.round($end_time-$start_time, 3).' s';
 		?> | 
 		<img src="images/connectes.png" alt=""/> 
 		<?php
-		$connection = mysql_connect('localhost', 'root', '396549');
+		$connection = mysql_connect('localhost', 'root', '');
 		if ($connection)
 		{
 		  $db_selected = mysql_select_db('test', $connection);
@@ -78,9 +78,9 @@
 			  echo 'Invalid query : ' . mysql_error().' - '.$reponse.'<br/>';
 			$donnees = mysql_fetch_array($reponse);
 			if ($donnees['nbre_entrees'] == 1)
-			  echo '1 visiteur connecté';
+			  echo '1 visiteur connectÃ©';
 			else
-			  echo $donnees['nbre_entrees'].' visiteurs connectés';
+			  echo $donnees['nbre_entrees'].' visiteurs connectÃ©s';
 			$res_fichier = fopen('admin/record_connectes.txt', 'r+');
 			$record_connectes = fgets($res_fichier);
 			$record_timestamp = fgets($res_fichier);
@@ -102,10 +102,10 @@
 		else
 		  echo'Not connected : ' . mysql_error().' - '.$connection.'<br/>';
 		if ($record_connectes == 1)
-		  echo ' (Record : 1 visiteur connecté le ';
+		  echo ' (Record : 1 visiteur connectÃ© le ';
 		else
-		  echo ' (Record : '.$record_connectes.' visiteurs connectés le ';
-		echo date('d/m/Y à H:i:s', $record_timestamp).')';
+		  echo ' (Record : '.$record_connectes.' visiteurs connectÃ©s le ';
+		echo date('d/m/Y Ã  H:i:s', $record_timestamp).')';
 		?>
 		| 
 		<img src="images/communaute.png" alt=""/> xx visiteurs depuis l'ouverture du site | 
@@ -113,5 +113,5 @@
 		<?php
 		  echo get_ip();
 		?></p>
-		<p>Tous droits réservés. Copyright &copy; Tennis de Table Beaupréau 2007 | Code &amp; design par <a href='mailto:<?php spam('bertrand.delion@free.fr'); ?>'>fifiz</a> | Contenu par <a href='mailto:<?php spam('notubalex@hotmail.fr'); ?>'>notub.alex</a></p>
+		<p>Tous droits rÃ©servÃ©s. Copyright &copy; Tennis de Table BeauprÃ©au 2007 | Code &amp; design par <a href='mailto:<?php spam('bertrand.delion@free.fr'); ?>'>fifiz</a> | Contenu par <a href='mailto:<?php spam('notubalex@hotmail.fr'); ?>'>notub.alex</a></p>
       </div>
