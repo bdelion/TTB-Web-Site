@@ -2,7 +2,7 @@
   // Test� avec PHP 4.3.3 POUR PAGERANK
   Function xtTraiter($nompage) {
     $nompage = strtolower($nompage);
-	$nompage = strtr($nompage,"�������������������","aaaaiiiooouuueeeecn");
+	$nompage = strtr($nompage,"àâäáîïíôöóùûüéèêëçñ","aaaaiiiooouuueeeecn");
 	$nompage = eregi_replace("[^a-z0-9_:~\\\/\-]","_",$nompage);
 	return($nompage);
   }

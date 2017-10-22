@@ -17,7 +17,7 @@
   else {
     $page = 0;
   }
-  $menu_left = array ('Accueil', 'accueil', 'Equipes', 'equipes', 'Bureau / Contacts', 'contacts', 'Presse', 'presse', 'T�l�chargement', 'telechargement', 'Saison 2006-2007', 'photos_20062007', 'Saison 2005-2006', 'photos_20052006', 'Dates & Heures', 'dates_heures', 'Mot de passe', 'mot_de_passe', 'SQL Tests', 'sql_tests', 'Cartographie', 'cartographie', 'Mini Chat', 'mini_chat', 'Image Tools', 'image_tools', 'Fonctions cha�nes', 'fonctions_chaines', 'Formulaire', 'formulaire', 'Livre d\'or', 'livre_or', 'News', 'news', 'Les variables superglobales', 'var_superglobale', 'Lecture / �criture dans un fichier', 'fichier', 'Les tableaux', 'array', 'Images', 'images', 'Expressions r�guli�res', 'regex');
+  $menu_left = array ('Accueil', 'accueil', 'Equipes', 'equipes', 'Bureau / Contacts', 'contacts', 'Presse', 'presse', 'Téléchargement', 'telechargement', 'Saison 2006-2007', 'photos_20062007', 'Saison 2005-2006', 'photos_20052006', 'Dates & Heures', 'dates_heures', 'Mot de passe', 'mot_de_passe', 'SQL Tests', 'sql_tests', 'Cartographie', 'cartographie', 'Mini Chat', 'mini_chat', 'Image Tools', 'image_tools', 'Fonctions cha�nes', 'fonctions_chaines', 'Formulaire', 'formulaire', 'Livre d\'or', 'livre_or', 'News', 'news', 'Les variables superglobales', 'var_superglobale', 'Lecture / �criture dans un fichier', 'fichier', 'Les tableaux', 'array', 'Images', 'images', 'Expressions r�guli�res', 'regex');
   if (($page < 0) OR ($page > 21)) {
     $page = 0;
   }
